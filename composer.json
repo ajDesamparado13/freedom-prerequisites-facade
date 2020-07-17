@@ -1,0 +1,25 @@
+{
+  "name": "freedom/prerequisites",
+  "description": "Prerequisites Macroable Facade",
+  "type": "library",
+  "authors": [
+    {
+      "name": "Allen Jay Desamparado",
+      "email": "ajDesamparado13@gmail.com"
+    }
+  ],
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "Freedom\\Prerequisites\\": "src/Prerequisites/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Freedom\\Prerequisites\\Providers\\LaravelServiceProvider"
+      ]
+    }
+  },
+  "minimum-stability": "dev"
+}
