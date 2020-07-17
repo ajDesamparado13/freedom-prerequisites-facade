@@ -4,7 +4,7 @@ namespace Freedom\Prerequisites\Facade;
 
 use Illuminate\Support\Facades\Facade;
 
-class Prerequsites extends Facade {
+class Prerequisites extends Facade {
 
     protected static function getFacadeAccessor()
     {
