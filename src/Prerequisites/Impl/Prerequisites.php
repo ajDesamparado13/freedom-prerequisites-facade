@@ -26,4 +26,8 @@ class Prerequisites {
         return Cache::remember("prerequisites-{$name}",$this->expiration,$closure);
     }
 
+    public function forget($cache){
+        return Cache::forget("prerequisites-{$cache}");
+    }
+
 }
