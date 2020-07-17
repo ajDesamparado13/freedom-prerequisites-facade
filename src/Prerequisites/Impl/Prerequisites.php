@@ -1,11 +1,13 @@
 <?php
 namespace Freedom\Prerequisites\Impl;
 
+use Illuminate\Support\Traits\Macroable;
 use Carbon\Carbon;
 use Closure;
 use Cache;
 
 class Prerequisites {
+    use Macroable;
 
     protected $expiration;
 
