@@ -17,13 +17,11 @@ class Prerequisites {
 
     protected function createExpiry()
     {
-        //TODO CREATE EXPIRY BASE FROM CONFIG FILE
-        $expiration = Carbon::tomorrow();
-        return $expiration;
+        return Carbon::parse(\Config::get('prerequisites.cache.expiration','tomorrow'));
     }
 
-    protected function cache($name,Closure $closure){
-        return Cache::remember("prerequisites-{$name}",$this->expiration,$closure);
+    protected function cache($name,Closure $closure,$expiration=null){
+        return Cache::remember("prerequisites-{$name}",$expiration ?? $this->expiration,$closure);
     }
 
     public function forget($cache){

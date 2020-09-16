@@ -17,7 +17,11 @@ class LaravelServiceProvider extends ServiceProvider
         $this->app->singleton('prerequisites',function(){
             return new Prerequisites();
         });
-        //
+        $this->publishes([
+            __DIR__.'/../../config/prerequisites.php' => config_path('prerequisites.php'),
+        ], 'config');
+        $this->mergeConfigFrom(__DIR__.'/../../config/prerequisites.php', 'prerequisites');
+
     }
 
     /**
