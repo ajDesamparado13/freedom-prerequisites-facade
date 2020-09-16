@@ -8,10 +8,10 @@ trait HasPrerequisitesCaching
 
     public static function bootHasPrerequisitesCaching()
     {
-        static::deleted(function ($model) {
+        static::deleting(function ($model) {
             \Prerequisites::forget( static::prerequisiteCacheName());
         });
-        static::saved(function ($model) {
+        static::saving(function ($model) {
             \Prerequisites::forget( static::prerequisiteCacheName());
         });
     }
